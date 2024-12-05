@@ -1,0 +1,421 @@
+<div class="main">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-2 bg-white sidebar shadow position-fixed navbar-rounded mt-4 mx-3"
+      [ngClass]="{'show': isSidebarOpen, 'hide': !isSidebarOpen}"
+      id="sidebar"
+      style="top: 0; left: 0; bottom: 0; z-index: 1000;">
+        <div id="navbarNav" [class.open]="isSidebarOpen">
+          <div class="d-flex m-4">
+            <img src="../../../assets/logo-dark.svg" alt="Logo" height="35px">
+          </div>
+          <ul class="menu">
+
+            <li class="nav-item home-link mt-4 mx-4">
+              <a class="nav-link text-secondary" href="#">Home</a>
+            </li>
+            <li class="nav-item mt-4 text-secondary menu-item active">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-th-large text-blue-400" aria-hidden="true"></i>
+                <span class="ml-4 text-blue-400">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item home-link mt-4 mx-4">
+              <a class="nav-link text-secondary" href="#">UI</a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa-solid fa-circle-exclamation"></i><span
+                  class="ml-4">Alert</span></a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa-solid fa-circle-stop fw-medium"></i><span
+                  class="ml-4">Button</span></a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-window-restore" aria-hidden="true"></i>
+                <span class="ml-4">Cards</span></a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-th-large" aria-hidden="true"></i>
+                <span class="ml-4">Tables</span></a>
+            </li>
+            <li class="nav-item home-link mt-5 mx-4">
+              <a class="nav-link text-secondary" href="#">AUTH</a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                <span class="ml-4">Login</span></a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>
+                <span class="ml-4">Login</span></a>
+            </li>
+            <li class="nav-item home-link mt-5 mx-4">
+              <a class="nav-link text-secondary" href="#">EXTRA</a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-smile fw-normal" aria-hidden="true"></i>
+                <span class="ml-4">Icons</span></a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-bullseye" aria-hidden="true"></i>
+                <span class="ml-5">Sample Pages</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="content mt-2">
+        <!-- <div class="col-md-10 offset-md-2 ">
+        <nav class="navbar navbar-light bg-white shadow-sm px-4 navbar-rounded p-3 mt-3">
+          <div class="d-flex align-items-center ml-5">
+            <div class="position-relative me-3">
+              <i class="fa fa-bell fa-lg text-secondary"></i>
+              <span class="blue-dot"></span>
+            </div>
+          </div>
+          <div class="d-flex ms-auto mx-3">
+            <button class="btn btn-primary rounded-pill fw-medium upgrade px-3">Upgrade to Pro</button>
+          </div>
+          <div>
+            <img src="../../../assets/user-1.jpg" alt="" height="35px" width="35px" class="rounded-circle">
+          </div>
+        </nav>
+
+        
+          <div class="row mt-3">
+            <div class="col-md-8">
+              <div class="card shadow-sm p-3">
+                <h6 class="mx-3 mt-2 text-dark fw-medium">Profit & Expenses</h6>
+                <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
+                  style="width: 100%; height: 400px; display: block;">
+                </highcharts-chart>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card shadow-sm p-3 mb-3 h-12rem">
+
+                </div>
+              </div>
+               
+              <div class="col-md-4">
+              <div class="card shadow-sm p-3 h-12rem">
+                <h6>Product Sales</h6>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
+              <div class="card shadow-sm p-3 mb-3 mt-3 h-30rem">
+                <h6>Upcoming Schedules</h6>
+                <p>$36,358</p>
+                <small>+9% last year</small>
+              </div>
+            </div>
+            <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-6 col-sm-6">
+              <div class="card shadow-sm p-3 mb-3 mt-3 h-30rem">
+                <h6>Top Paying Clients</h6>
+                <p>$36,358</p>
+                <small>+9% last year</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card shadow-sm p-3 mb-3 h-12rem">
+                <h6>Boat Headphone</h6>
+              </div>
+            </div>
+          
+            <div class="col-md-3">
+              <div class="card shadow-sm p-3 mb-3 h-12rem">
+                <h6>MacBook Air Pro</h6>
+              </div>
+            </div>
+           
+            <div class="col-md-3">
+              <div class="card shadow-sm p-3 mb-3 h-12rem">
+                <h6>Red Valvet Dress</h6>
+              </div>
+            </div>
+           
+            <div class="col-md-3">
+              <div class="card shadow-sm p-3 mb-3 h-12rem">
+                <h6>Cute Soft Teddybear</h6>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="col-md-10 offset-md-2">
+          <nav class="navbar navbar-light bg-white shadow-sm px-4 px-4 navbar-rounded p-3 mt-3">
+            <!-- <button class="btn btn-primary" (click)="toggleSidebar()">
+              <i class="fa fa-bars"></i>
+            </button> -->
+            <div class="d-flex align-items-center ml-5">
+              <div class="position-relative me-3">
+                <i class="fa fa-bell fa-lg text-secondary"></i>
+                <span class="blue-dot"></span>
+              </div>
+            </div>
+            <div class="d-flex ms-auto mx-3">
+              <button class="btn btn-primary rounded-pill fw-medium upgrade px-3">Upgrade to Pro</button>
+            </div>
+            <div>
+              <img src="../../../assets/user-1.jpg" alt="" height="35px" width="35px" class="rounded-circle">
+            </div>
+          </nav>
+
+          <div class=" mt-3">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card shadow-sm p-3">
+                  <h6 class="mx-3 mt-2 text-dark fw-medium">Profit & Expenses</h6>
+                  <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
+                    style="width: 100%; height: 400px; display: block;">
+                  </highcharts-chart>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card shadow-sm">
+                  <h5 class="mt-4 mx-4">Traffic Distribution</h5>
+                  <div class="d-flex">
+                    <div class="me-0 mt-4">
+                      <h4 class="mb-1 mx-4">$36,358</h4>
+                      <span class="d-flex align-items-center mx-3 mt-2 mb-0">
+                        <i class="bi bi-arrow-up me-1 small"></i> <span class="small fw-medium">+9%</span> <small
+                          class="ms-2 text-muted small">last
+                          year</small>
+                      </span>
+                      <div class="d-flex mx-4 mb-4 mt-3">
+                        <div class="small text-muted">
+                          <span class="dot bg-primary small"></span><br> Organic
+                        </div>
+                        <div class="small mx-4 text-muted">
+                          <span class="dot bg-danger small"></span><br> Referral
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <!-- <svg width="100" height="100" viewBox="0 0 36 36" class="circular-chart">
+                        <path class="circle-bg" d="M18 2.0845
+                          a 15.9155 15.9155 0 0 1 0 31.831
+                          a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#f0f0f0" stroke-width="2.5" />
+                        <path class="circle" stroke-dasharray="40, 100" d="M18 2.0845
+                          a 15.9155 15.9155 0 0 1 0 31.831
+                          a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#007bff" stroke-width="2.5" />
+                        <path class="circle-referral" stroke-dasharray="60, 100" d="M18 2.0845
+                          a 15.9155 15.9155 0 0 1 0 31.831
+                          a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#f66" stroke-width="2.5" />
+                          <path class="circle-referral-1" stroke-dasharray="60, 100" d="M18 2.0845
+                          a 15.9155 15.9155 0 0 1 0 31.831
+                          a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#f66" stroke-width="2.5" />
+                      </svg>  -->
+                      <div class="chart-container" style="width: 120px; height: 120px; position: relative;">
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                          <path class="circle gray" stroke-dasharray="30, 70" d="M18 2.0845
+                             a 15.9155 15.9155 0 0 1 0 31.831
+                             a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dashoffset="-70"></path>
+                          <path class="circle blue" stroke-dasharray="30, 70" d="M18 2.0845
+                               a 15.9155 15.9155 0 0 1 0 31.831
+                               a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                          <path class="circle pink" stroke-dasharray="40, 60" d="M18 2.0845
+                               a 15.9155 15.9155 0 0 1 0 31.831
+                               a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dashoffset="-30"></path>
+
+                        </svg>
+                      </div>
+
+                    </div>
+                  </div>
+                  <!-- <div class="d-flex small mx-4 mt-0">
+                    <div class="small">
+                      <span class="dot bg-primary small"></span><br> Organic
+                    </div>
+                    <div class="small mx-4">
+                      <span class="dot bg-danger small"></span><br> Referral
+                    </div>
+                  </div> -->
+
+                </div>
+                <div class="card shadow-sm p-3 h-14rem mt-3">
+                  <div class="d-flex">
+                    <h5 class="mx-4 mt-4">Product Sales</h5>
+                    <p class="ms-auto dollar-sign mt-3"><i class="fa fa-dollar ml-3 mt-3" aria-hidden="true"></i></p>
+                  </div>
+                  <h4 class="mb-1 mx-4 mt-0">$6,280</h4>
+                  <span class="d-flex align-items-center mx-3 mt-2">
+                    <i class="bi bi-arrow-up me-1 small"></i> <span class="small fw-medium">+9%</span> <small
+                      class="ms-2 text-muted small">last
+                      year</small>
+                  </span>
+                  <div class="mb-4">
+                    <div class="w-100">
+                      <highcharts-chart [Highcharts]="Highcharts" [options]="lineChartOptions"
+                        style="width: 100%; height: 60px; display: block;">
+                      </highcharts-chart>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <div class="card shadow-sm mt-3 text-left mb-1">
+                  <h6 class="m-3 mt-4 text-center">Upcoming Schedules</h6>
+                     <p-timeline [value]="events" styleClass="custom-timeline px-2" class="mb-3 mt-4">
+                      <ng-template pTemplate="opposite"  let-event>
+                        <small class="event-date mt-3">{{ event.time }}</small>
+                      </ng-template>
+                      <ng-template pTemplate="content" let-event>
+                        <div class="event-content mb-2">
+                          <span class="small mt-3 fw-medium">{{ event.title }}</span><br>
+                          <small class="small mt-3 text-primary">{{ event.description }}</small>
+                        </div>
+                      </ng-template>
+
+                     </p-timeline>
+                    
+                  
+
+
+
+ 
+                  
+                  
+                  
+
+
+
+                </div>
+              </div>
+              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-6 col-sm-6">
+                <div class="card shadow-sm mt-3 mb-3 p-3">
+                  <h6 class="m-3">Top Paying Clients</h6>
+                  <p-table [value]="employees" [rows]="5" [responsiveLayout]="'scroll'" class="p-0 bg-white">
+                    <ng-template pTemplate="header">
+                      <tr class=" text-secondary no-bg-row">
+                        <th class="text-secondary no-bg-row">ID</th>
+                        <th class="text-secondary no-bg-row">Name</th>
+                        <th class="text-secondary no-bg-row">Project</th>
+                        <th class="text-secondary no-bg-row">Priority</th>
+                        <th class="text-secondary no-bg-row">Budget</th>
+                        
+                      </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-employee>
+                      <tr>
+                        <td>{{ employee.id }}</td>
+                        <td>
+                          
+                          <span class="name fw-semibold text-dark">{{ employee.name }}</span><br>
+                          <span class="role small text-secondary">{{ employee.role }}</span>
+                        </td>
+                        <td class="fw-medium text-dark">{{ employee.project }}</td>
+                        <td [ngClass]="getPriorityClass(employee.priority)" class=" rounded-pill">{{ employee.priority }}</td>
+                        <td class="fw-semibold text-dark fs-6">{{ employee.budget }}</td>
+                        
+                      </tr>
+                    </ng-template>
+                  </p-table>
+                  
+                  
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-3">
+                <div class="card shadow-sm mb-4 h-20rem">
+                  <div>
+                    <img src="../../../assets/headphone.jpg" alt="" class="images-1">
+                    <!-- <div class="basket-icon-container small p-2">
+                      <i class="fa fa-shopping-basket basket-icon bg-primary-200 small text-white"></i>
+                      <span class="add-to-cart">Add to Cart</span>
+                    </div> -->
+                    <p class="fw-medium m-3 mb-2 fs-6">Boat Headphone</p>
+                    <div class="mb-3">
+                      <span class="fw-medium ml-3">$285 &nbsp; <span class="fw-medium text-secondary">$375</span></span> &nbsp; &nbsp;
+                      <i class="fa fa-star icon" aria-hidden="true"></i>
+                      <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
+                      <i class="fa fa-star icon" aria-hidden="true"></i>
+                      <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
+                      <i class="fa fa-star icon" aria-hidden="true"></i>&nbsp; &nbsp;
+                    </div>                   
+                  </div>
+                </div>
+              </div>
+              <!-- card-2 -->
+              <div class="col-md-3">
+                <div class="card shadow-sm">
+                  <div>
+                    <img src="../../../assets/laptop.jpg" alt="" class="images-2">
+                    <p class="fw-medium m-3 mb-2 fs-6">MacBook Air Pro</p>
+                    <div class="mb-3">
+                      <span class="fw-medium ml-3">$900 &nbsp; <span class="fw-medium text-secondary">$650</span></span> &nbsp; &nbsp;
+                      <i class="fa fa-star icon" aria-hidden="true"></i>
+                      <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
+                      <i class="fa fa-star icon" aria-hidden="true"></i>
+                      <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
+                      <i class="fa fa-star icon" aria-hidden="true"></i>&nbsp; &nbsp;
+                    </div>                   
+                  </div>
+                </div>
+              </div>
+              <!-- card -->
+              <div class="col-md-3">
+                <div class="card shadow-sm">
+                  <div>
+                    <img src="../../../assets/s7.jpg" alt="" class="images-2">
+                    <p class="fw-medium m-3 mb-2 fs-6">Red Valvet Dress</p>
+                    <div class="mb-3">
+                      <span class="fw-medium ml-3">$200 &nbsp; <span class="fw-medium text-secondary">$150</span></span> &nbsp; &nbsp;
+                      <i class="fa fa-star icon" aria-hidden="true"></i>
+                      <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
+                      <i class="fa fa-star icon" aria-hidden="true"></i>
+                      <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
+                      <i class="fa fa-star icon" aria-hidden="true"></i>&nbsp; &nbsp;
+                    </div>                   
+                  </div>
+                </div>
+              </div>
+              <!-- card-4 -->
+              <div class="col-md-3">
+                <div class="card shadow-sm">
+                  <div>
+                    <img src="../../../assets/s11.jpg" alt="" class="images-2">
+                    <p class="fw-medium m-3 mb-2 fs-6">Cute Soft Teddybear</p>
+                    <div class="mb-3">
+                      <span class="fw-medium ml-3">$345 &nbsp; <span class="fw-medium text-secondary">$285</span></span> &nbsp; &nbsp;
+                      <i class="fa fa-star icon" aria-hidden="true"></i>
+                      <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
+                      <i class="fa fa-star icon" aria-hidden="true"></i>
+                      <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
+                      <i class="fa fa-star icon" aria-hidden="true"></i>&nbsp; &nbsp;
+                    </div>                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
