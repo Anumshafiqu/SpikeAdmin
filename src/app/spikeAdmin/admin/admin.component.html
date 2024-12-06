@@ -2,11 +2,9 @@
   <div class="container-fluid">
     <div class="row">
       <!-- Sidebar -->
-      <div class="col-md-2 bg-white sidebar shadow position-fixed navbar-rounded mt-4 mx-3"
-      [ngClass]="{'show': isSidebarOpen, 'hide': !isSidebarOpen}"
-      id="sidebar"
-      style="top: 0; left: 0; bottom: 0; z-index: 1000;">
-        <div id="navbarNav" [class.open]="isSidebarOpen">
+      <!-- <div class="col-md-2 bg-white sidebar shadow position-fixed navbar-rounded mt-4 mx-3" 
+      [ngClass]="{ 'sidebar-open': isSidebarOpen, 'sidebar-closed': !isSidebarOpen }">
+        <div id="navbarNav"   [class.open]="isSidebarOpen">
           <div class="d-flex m-4">
             <img src="../../../assets/logo-dark.svg" alt="Logo" height="35px">
           </div>
@@ -64,111 +62,12 @@
           </ul>
         </div>
       </div>
-
-
-      <div class="content mt-2">
-        <!-- <div class="col-md-10 offset-md-2 ">
-        <nav class="navbar navbar-light bg-white shadow-sm px-4 navbar-rounded p-3 mt-3">
-          <div class="d-flex align-items-center ml-5">
-            <div class="position-relative me-3">
-              <i class="fa fa-bell fa-lg text-secondary"></i>
-              <span class="blue-dot"></span>
-            </div>
-          </div>
-          <div class="d-flex ms-auto mx-3">
-            <button class="btn btn-primary rounded-pill fw-medium upgrade px-3">Upgrade to Pro</button>
-          </div>
-          <div>
-            <img src="../../../assets/user-1.jpg" alt="" height="35px" width="35px" class="rounded-circle">
-          </div>
-        </nav>
-
-        
-          <div class="row mt-3">
-            <div class="col-md-8">
-              <div class="card shadow-sm p-3">
-                <h6 class="mx-3 mt-2 text-dark fw-medium">Profit & Expenses</h6>
-                <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
-                  style="width: 100%; height: 400px; display: block;">
-                </highcharts-chart>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card shadow-sm p-3 mb-3 h-12rem">
-
-                </div>
-              </div>
-               
-              <div class="col-md-4">
-              <div class="card shadow-sm p-3 h-12rem">
-                <h6>Product Sales</h6>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <div class="card shadow-sm p-3 mb-3 mt-3 h-30rem">
-                <h6>Upcoming Schedules</h6>
-                <p>$36,358</p>
-                <small>+9% last year</small>
-              </div>
-            </div>
-            <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-6 col-sm-6">
-              <div class="card shadow-sm p-3 mb-3 mt-3 h-30rem">
-                <h6>Top Paying Clients</h6>
-                <p>$36,358</p>
-                <small>+9% last year</small>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <div class="card shadow-sm p-3 mb-3 h-12rem">
-                <h6>Boat Headphone</h6>
-              </div>
-            </div>
-          
-            <div class="col-md-3">
-              <div class="card shadow-sm p-3 mb-3 h-12rem">
-                <h6>MacBook Air Pro</h6>
-              </div>
-            </div>
-           
-            <div class="col-md-3">
-              <div class="card shadow-sm p-3 mb-3 h-12rem">
-                <h6>Red Valvet Dress</h6>
-              </div>
-            </div>
-           
-            <div class="col-md-3">
-              <div class="card shadow-sm p-3 mb-3 h-12rem">
-                <h6>Cute Soft Teddybear</h6>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <div class="content mt-2"   [class.content-expanded]="isSidebarOpen">
         <div class="col-md-10 offset-md-2">
           <nav class="navbar navbar-light bg-white shadow-sm px-4 px-4 navbar-rounded p-3 mt-3">
-            <!-- <button class="btn btn-primary" (click)="toggleSidebar()">
-              <i class="fa fa-bars"></i>
-            </button> -->
+            <button class="navbar-toggler d-xl-none" type="button" (click)="toggleSidebar()">
+              <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="d-flex align-items-center ml-5">
               <div class="position-relative me-3">
                 <i class="fa fa-bell fa-lg text-secondary"></i>
@@ -181,11 +80,97 @@
             <div>
               <img src="../../../assets/user-1.jpg" alt="" height="35px" width="35px" class="rounded-circle">
             </div>
+          </nav> -->
+
+
+
+
+
+      <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="sidebar" [ngClass]="{'open': isSidebarOpen}">
+          <div class="sidebar-header m-3">
+            <img src="../../../assets/logo-dark.svg" alt="Logo" height="35px" />
+          </div>
+          <ul class="menu">
+
+            <li class="nav-item home-link mt-4 mx-4">
+              <a class="nav-link text-secondary" href="#">Home</a>
+            </li>
+            <li class="nav-item mt-4 text-secondary menu-item active">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-th-large text-blue-400" aria-hidden="true"></i>
+                <span class="ml-4 text-blue-400">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item home-link mt-4 mx-4">
+              <a class="nav-link text-secondary" href="#">UI</a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa-solid fa-circle-exclamation"></i><span
+                  class="ml-4">Alert</span></a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa-solid fa-circle-stop fw-medium"></i><span
+                  class="ml-4">Button</span></a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-window-restore" aria-hidden="true"></i>
+                <span class="ml-4">Cards</span></a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-th-large" aria-hidden="true"></i>
+                <span class="ml-4">Tables</span></a>
+            </li>
+            <li class="nav-item home-link mt-5 mx-4">
+              <a class="nav-link text-secondary" href="#">AUTH</a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                <span class="ml-4">Login</span></a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>
+                <span class="ml-4">Login</span></a>
+            </li>
+            <li class="nav-item home-link mt-5 mx-4">
+              <a class="nav-link text-secondary" href="#">EXTRA</a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-smile fw-normal" aria-hidden="true"></i>
+                <span class="ml-4">Icons</span></a>
+            </li>
+            <li class="nav-item mt-4 mx-4">
+              <a class="nav-link fw-medium" href="#"><i class="fa fa-bullseye" aria-hidden="true"></i>
+                <span class="ml-5">Sample Pages</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="" [ngClass]="{'shifted': isSidebarOpen}">
+          <nav class="navbar navbar-light bg-white shadow-sm px-4 navbar-rounded p-3 fixed-top">
+            <a class="navbar-toggler d-xl-none" type="button" (click)="toggleSidebar()">
+              <span class="navbar-toggler-icon"></span>
+            </a>
+            <div class="d-flex align-items-center ml-5">
+              <div class="position-relative me-3">
+                <i class="fa fa-bell fa-lg text-secondary"></i>
+                <span class="blue-dot"></span>
+              </div>
+            </div>
+            <div class="d-flex ms-auto">
+              <button class="btn btn-primary rounded-pill fw-medium upgrade px-3">Upgrade to Pro</button>
+              <img src="../../../assets/user-1.jpg" alt="" height="35px" width="35px" class="rounded-circle">
+            </div>
+            <div>
+              <!-- <img src="../../../assets/user-1.jpg" alt="" height="35px" width="35px" class="rounded-circle"> -->
+            </div>
+
           </nav>
 
-          <div class=" mt-3">
-            <div class="row">
-              <div class="col-md-8">
+          <div class="content mt-7">
+            <div class="row mt-7">
+              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12 mt-6">
                 <div class="card shadow-sm p-3">
                   <h6 class="mx-3 mt-2 text-dark fw-medium">Profit & Expenses</h6>
                   <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
@@ -193,7 +178,7 @@
                   </highcharts-chart>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-xl-4 col-lg-4 col-md-12 mt-6">
                 <div class="card shadow-sm">
                   <h5 class="mt-4 mx-4">Traffic Distribution</h5>
                   <div class="d-flex">
@@ -228,7 +213,7 @@
                           a 15.9155 15.9155 0 0 1 0 31.831
                           a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#f66" stroke-width="2.5" />
                       </svg>  -->
-                      <div class="chart-container" style="width: 120px; height: 120px; position: relative;">
+                      <!-- <div class="chart-container" style="width: 120px; height: 120px; position: relative;">
                         <svg viewBox="0 0 36 36" class="circular-chart">
                           <path class="circle gray" stroke-dasharray="30, 70" d="M18 2.0845
                              a 15.9155 15.9155 0 0 1 0 31.831
@@ -239,9 +224,8 @@
                           <path class="circle pink" stroke-dasharray="40, 60" d="M18 2.0845
                                a 15.9155 15.9155 0 0 1 0 31.831
                                a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dashoffset="-30"></path>
-
                         </svg>
-                      </div>
+                      </div> -->
 
                     </div>
                   </div>
@@ -277,36 +261,36 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12">
                 <div class="card shadow-sm mt-3 text-left mb-1">
-                  <h6 class="m-3 mt-4 text-center">Upcoming Schedules</h6>
-                     <p-timeline [value]="events" styleClass="custom-timeline px-2" class="mb-3 mt-4">
-                      <ng-template pTemplate="opposite"  let-event>
-                        <small class="event-date mt-3">{{ event.time }}</small>
-                      </ng-template>
-                      <ng-template pTemplate="content" let-event>
-                        <div class="event-content mb-2">
-                          <span class="small mt-3 fw-medium">{{ event.title }}</span><br>
-                          <small class="small mt-3 text-primary">{{ event.description }}</small>
-                        </div>
-                      </ng-template>
+                  <h6 class="m-3 mt-4">Upcoming Schedules</h6>
+                  <p-timeline [value]="events" styleClass="custom-timeline px-2" class="mb-3 mt-4">
+                    <ng-template pTemplate="opposite" let-event>
+                      <small class="event-date mt-3">{{ event.time }}</small>
+                    </ng-template>
+                    <ng-template pTemplate="content" let-event>
+                      <div class="event-content mb-2">
+                        <span class="small mt-3 fw-medium">{{ event.title }}</span><br>
+                        <small class="small mt-3 text-primary">{{ event.description }}</small>
+                      </div>
+                    </ng-template>
 
-                     </p-timeline>
-                    
-                  
+                  </p-timeline>
 
 
 
- 
-                  
-                  
-                  
+
+
+
+
+
+
 
 
 
                 </div>
               </div>
-              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-6 col-sm-6">
+              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12">
                 <div class="card shadow-sm mt-3 mb-3 p-3">
                   <h6 class="m-3">Top Paying Clients</h6>
                   <p-table [value]="employees" [rows]="5" [responsiveLayout]="'scroll'" class="p-0 bg-white">
@@ -317,98 +301,103 @@
                         <th class="text-secondary no-bg-row">Project</th>
                         <th class="text-secondary no-bg-row">Priority</th>
                         <th class="text-secondary no-bg-row">Budget</th>
-                        
+
                       </tr>
                     </ng-template>
                     <ng-template pTemplate="body" let-employee>
                       <tr>
                         <td>{{ employee.id }}</td>
                         <td>
-                          
+
                           <span class="name fw-semibold text-dark">{{ employee.name }}</span><br>
                           <span class="role small text-secondary">{{ employee.role }}</span>
                         </td>
                         <td class="fw-medium text-dark">{{ employee.project }}</td>
-                        <td [ngClass]="getPriorityClass(employee.priority)" class=" rounded-pill">{{ employee.priority }}</td>
+                        <td [ngClass]="getPriorityClass(employee.priority)" class=" rounded-pill">{{ employee.priority
+                          }}</td>
                         <td class="fw-semibold text-dark fs-6">{{ employee.budget }}</td>
-                        
+
                       </tr>
                     </ng-template>
                   </p-table>
-                  
-                  
+
+
                 </div>
               </div>
             </div>
             <div class="row mt-3">
-              <div class="col-md-3">
-                <div class="card shadow-sm mb-4 h-20rem">
+              <div class=" col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                <div class="card shadow-sm mb-4">
                   <div>
-                    <img src="../../../assets/headphone.jpg" alt="" class="images-1">
+                    <img src="../../../assets/headphone.jpg" alt="" class="images-1 w-100">
                     <!-- <div class="basket-icon-container small p-2">
                       <i class="fa fa-shopping-basket basket-icon bg-primary-200 small text-white"></i>
                       <span class="add-to-cart">Add to Cart</span>
                     </div> -->
                     <p class="fw-medium m-3 mb-2 fs-6">Boat Headphone</p>
                     <div class="mb-3">
-                      <span class="fw-medium ml-3">$285 &nbsp; <span class="fw-medium text-secondary">$375</span></span> &nbsp; &nbsp;
+                      <span class="fw-medium ml-3">$285 &nbsp; <span class="fw-medium text-secondary">$375</span></span>
+                      &nbsp; &nbsp;
                       <i class="fa fa-star icon" aria-hidden="true"></i>
                       <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
                       <i class="fa fa-star icon" aria-hidden="true"></i>
                       <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
                       <i class="fa fa-star icon" aria-hidden="true"></i>&nbsp; &nbsp;
-                    </div>                   
+                    </div>
                   </div>
                 </div>
               </div>
               <!-- card-2 -->
-              <div class="col-md-3">
+              <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
                 <div class="card shadow-sm">
-                  <div>
-                    <img src="../../../assets/laptop.jpg" alt="" class="images-2">
+                  <div class="">
+                    <img src="../../../assets/laptop.jpg" alt="" class="images-2 w-100">
                     <p class="fw-medium m-3 mb-2 fs-6">MacBook Air Pro</p>
                     <div class="mb-3">
-                      <span class="fw-medium ml-3">$900 &nbsp; <span class="fw-medium text-secondary">$650</span></span> &nbsp; &nbsp;
+                      <span class="fw-medium ml-3">$900 &nbsp; <span class="fw-medium text-secondary">$650</span></span>
+                      &nbsp; &nbsp;
                       <i class="fa fa-star icon" aria-hidden="true"></i>
                       <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
                       <i class="fa fa-star icon" aria-hidden="true"></i>
                       <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
                       <i class="fa fa-star icon" aria-hidden="true"></i>&nbsp; &nbsp;
-                    </div>                   
+                    </div>
                   </div>
                 </div>
               </div>
               <!-- card -->
-              <div class="col-md-3">
+              <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
                 <div class="card shadow-sm">
                   <div>
-                    <img src="../../../assets/s7.jpg" alt="" class="images-2">
+                    <img src="../../../assets/s7.jpg" alt="" class="images-2 w-100">
                     <p class="fw-medium m-3 mb-2 fs-6">Red Valvet Dress</p>
                     <div class="mb-3">
-                      <span class="fw-medium ml-3">$200 &nbsp; <span class="fw-medium text-secondary">$150</span></span> &nbsp; &nbsp;
+                      <span class="fw-medium ml-3">$200 &nbsp; <span class="fw-medium text-secondary">$150</span></span>
+                      &nbsp; &nbsp;
                       <i class="fa fa-star icon" aria-hidden="true"></i>
                       <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
                       <i class="fa fa-star icon" aria-hidden="true"></i>
                       <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
                       <i class="fa fa-star icon" aria-hidden="true"></i>&nbsp; &nbsp;
-                    </div>                   
+                    </div>
                   </div>
                 </div>
               </div>
               <!-- card-4 -->
-              <div class="col-md-3">
+              <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
                 <div class="card shadow-sm">
                   <div>
-                    <img src="../../../assets/s11.jpg" alt="" class="images-2">
+                    <img src="../../../assets/s11.jpg" alt="" class="images-2 w-100">
                     <p class="fw-medium m-3 mb-2 fs-6">Cute Soft Teddybear</p>
                     <div class="mb-3">
-                      <span class="fw-medium ml-3">$345 &nbsp; <span class="fw-medium text-secondary">$285</span></span> &nbsp; &nbsp;
+                      <span class="fw-medium ml-3">$345 &nbsp; <span class="fw-medium text-secondary">$285</span></span>
+                      &nbsp; &nbsp;
                       <i class="fa fa-star icon" aria-hidden="true"></i>
                       <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
                       <i class="fa fa-star icon" aria-hidden="true"></i>
                       <i class="fa fa-star icon mx-1" aria-hidden="true"></i>
                       <i class="fa fa-star icon" aria-hidden="true"></i>&nbsp; &nbsp;
-                    </div>                   
+                    </div>
                   </div>
                 </div>
               </div>
@@ -419,3 +408,137 @@
     </div>
   </div>
 </div>
+<!-- </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="d-flex">
+  <div class="sidebar bg-white shadow position-fixed navbar-rounded"
+       [ngClass]="{ 'sidebar-open': isSidebarOpen, 'sidebar-closed': !isSidebarOpen }">
+       <div id="navbarNav">
+        <div class="d-flex m-4">
+          <img src="../../../assets/logo-dark.svg" alt="Logo" height="35px">
+        </div>
+        <ul class="menu">
+
+          <li class="nav-item home-link mt-4 mx-4">
+            <a class="nav-link text-secondary" href="#">Home</a>
+          </li>
+          <li class="nav-item mt-4 text-secondary menu-item active">
+            <a class="nav-link fw-medium" href="#"><i class="fa fa-th-large text-blue-400" aria-hidden="true"></i>
+              <span class="ml-4 text-blue-400">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item home-link mt-4 mx-4">
+            <a class="nav-link text-secondary" href="#">UI</a>
+          </li>
+          <li class="nav-item mt-4 mx-4">
+            <a class="nav-link fw-medium" href="#"><i class="fa-solid fa-circle-exclamation"></i><span
+                class="ml-4">Alert</span></a>
+          </li>
+          <li class="nav-item mt-4 mx-4">
+            <a class="nav-link fw-medium" href="#"><i class="fa-solid fa-circle-stop fw-medium"></i><span
+                class="ml-4">Button</span></a>
+          </li>
+          <li class="nav-item mt-4 mx-4">
+            <a class="nav-link fw-medium" href="#"><i class="fa fa-window-restore" aria-hidden="true"></i>
+              <span class="ml-4">Cards</span></a>
+          </li>
+          <li class="nav-item mt-4 mx-4">
+            <a class="nav-link fw-medium" href="#"><i class="fa fa-th-large" aria-hidden="true"></i>
+              <span class="ml-4">Tables</span></a>
+          </li>
+          <li class="nav-item home-link mt-5 mx-4">
+            <a class="nav-link text-secondary" href="#">AUTH</a>
+          </li>
+          <li class="nav-item mt-4 mx-4">
+            <a class="nav-link fw-medium" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>
+              <span class="ml-4">Login</span></a>
+          </li>
+          <li class="nav-item mt-4 mx-4">
+            <a class="nav-link fw-medium" href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>
+              <span class="ml-4">Login</span></a>
+          </li>
+          <li class="nav-item home-link mt-5 mx-4">
+            <a class="nav-link text-secondary" href="#">EXTRA</a>
+          </li>
+          <li class="nav-item mt-4 mx-4">
+            <a class="nav-link fw-medium" href="#"><i class="fa fa-smile fw-normal" aria-hidden="true"></i>
+              <span class="ml-4">Icons</span></a>
+          </li>
+          <li class="nav-item mt-4 mx-4">
+            <a class="nav-link fw-medium" href="#"><i class="fa fa-bullseye" aria-hidden="true"></i>
+              <span class="ml-5">Sample Pages</span></a>
+          </li>
+        </ul>
+      </div>
+  </div>
+
+  <div class="content" [class.content-expanded]="isSidebarOpen">
+    <nav class="navbar navbar-light bg-white shadow-sm px-4 navbar-rounded p-3">
+      <button class="navbar-toggler d-xl-none" type="button" (click)="toggleSidebar()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-flex align-items-center ml-5">
+        <div class="position-relative me-3">
+          <i class="fa fa-bell fa-lg text-secondary"></i>
+          <span class="blue-dot"></span>
+        </div>
+      </div>
+      <div class="d-flex ms-auto mx-3">
+        <button class="btn btn-primary rounded-pill fw-medium upgrade px-3">Upgrade to Pro</button>
+      </div>
+      <div>
+        <img src="../../../assets/user-1.jpg" alt="" height="35px" width="35px" class="rounded-circle">
+      </div>
+    </nav>
+
+  </div>
+</div> -->

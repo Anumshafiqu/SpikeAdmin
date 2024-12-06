@@ -301,15 +301,95 @@ export class AdminComponent {
 
 
 
-  isSidebarOpen = false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  isSidebarOpen = false; // Tracks sidebar visibility
+
+  constructor(private elementRef: ElementRef) {
+    function toggleSidebar() {
+      const content = document.querySelector('.content');
+      content?.classList.toggle('sidebar-active');
+    }
+  }
 
   toggleSidebar() {
-    this.isSidebarOpen = !this.isSidebarOpen;
+    this.isSidebarOpen = !this.isSidebarOpen; // Toggles the sidebar
+    const sidebar = document.getElementById('sidebar') as any;
+    const backdrop = document.querySelector('.offcanvas-backdrop') as any;
+
+    sidebar.classList.toggle('show');
+    backdrop?.classList.toggle('noshow');
   }
 
   closeSidebar() {
-    this.isSidebarOpen = false;
+    this.isSidebarOpen = false; // Closes the sidebar
   }
+
+  // Detect clicks on the document
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const targetElement = event.target as HTMLElement;
+
+    // Close the sidebar if the click is outside the sidebar
+    if (this.isSidebarOpen && !this.elementRef.nativeElement.contains(targetElement)) {
+      this.closeSidebar();
+    }
+  }
+
+
+
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent) {
+    const sidebar = document.getElementById('sidebar');
+    const button = document.querySelector('.navbar button');
+    if (sidebar && !sidebar.contains(event.target as Node) && button && !button.contains(event.target as Node)) {
+      this.toggleSidebar(); // Close sidebar when clicking outside
+    }
+  }
+
+    // Close the sidebar when clicking outside of it
+    @HostListener('document:click', ['$event'])
+    onClick(event: MouseEvent) {
+      const sidebar = document.querySelector('.sidebar');
+      const navbar = document.querySelector('.navbar');
+      const clickedInsideSidebar = sidebar?.contains(event.target as Node);
+      const clickedInsideNavbar = navbar?.contains(event.target as Node);
+  
+      if (!clickedInsideSidebar && !clickedInsideNavbar) {
+        this.isSidebarOpen = false; // Close sidebar if click is outside
+      }
+    }
+
+
+    @HostListener('window:resize', [])
+    onResize() {
+      // Automatically show the sidebar for large screens
+      if (window.innerWidth >= 992) {
+        this.isSidebarOpen = true;
+      } else {
+        this.isSidebarOpen = false;
+      }
+    }
 }
   
 
