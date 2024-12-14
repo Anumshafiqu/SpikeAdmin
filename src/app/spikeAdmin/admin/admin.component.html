@@ -88,7 +88,8 @@
 
       <div class="d-flex">
         <!-- Sidebar -->
-        <div class="sidebar" [ngClass]="{'open': isSidebarOpen}">
+        <div class="sidebar" [ngClass]="{'open': isSidebarOpen}"
+        [class.hide]="!isSidebarVisible && screenWidth < 1300">
           <div class="sidebar-header m-3">
             <img src="../../../assets/logo-dark.svg" alt="Logo" height="35px" />
           </div>
@@ -158,8 +159,8 @@
                 <span class="blue-dot"></span>
               </div>
             </div>
-            <div class="d-flex ms-auto">
-              <button class="btn btn-primary rounded-pill fw-medium upgrade px-3">Upgrade to Pro</button>
+            <div class="d-flex ms-auto mx-2">
+              <button class="btn btn-primary rounded-pill fw-medium upgrade px-3 mx-2">Upgrade to Pro</button>
               <img src="../../../assets/user-1.jpg" alt="" height="35px" width="35px" class="rounded-circle">
             </div>
             <div>
@@ -168,18 +169,18 @@
 
           </nav>
 
-          <div class="content mt-7">
-            <div class="row mt-7">
-              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12 mt-6">
-                <div class="card shadow-sm p-3">
+          <div class="content">
+            <div class="row">
+              <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12 mt-8">
+                <div class="card shadow-sm p-3 mt-4">
                   <h6 class="mx-3 mt-2 text-dark fw-medium">Profit & Expenses</h6>
                   <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
-                    style="width: 100%; height: 400px; display: block;">
+                  style="width: 100%; height: 400px; display: block;">
                   </highcharts-chart>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-12 mt-6">
-                <div class="card shadow-sm">
+              <div class="col-xl-4 col-lg-4 col-md-12 mt-8">
+                <div class="card shadow-sm mt-4">
                   <h5 class="mt-4 mx-4">Traffic Distribution</h5>
                   <div class="d-flex">
                     <div class="me-0 mt-4">
@@ -213,8 +214,8 @@
                           a 15.9155 15.9155 0 0 1 0 31.831
                           a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#f66" stroke-width="2.5" />
                       </svg>  -->
-                      <!-- <div class="chart-container" style="width: 120px; height: 120px; position: relative;">
-                        <svg viewBox="0 0 36 36" class="circular-chart">
+                       <!-- <div class="chart-container" style="width: 120px; height: 120px; position:relative;">
+                        <svg viewBox="0 0 36 36" class="circular-chart ms-auto">
                           <path class="circle gray" stroke-dasharray="30, 70" d="M18 2.0845
                              a 15.9155 15.9155 0 0 1 0 31.831
                              a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dashoffset="-70"></path>
@@ -225,18 +226,11 @@
                                a 15.9155 15.9155 0 0 1 0 31.831
                                a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dashoffset="-30"></path>
                         </svg>
-                      </div> -->
+                      </div>  -->
 
                     </div>
                   </div>
-                  <!-- <div class="d-flex small mx-4 mt-0">
-                    <div class="small">
-                      <span class="dot bg-primary small"></span><br> Organic
-                    </div>
-                    <div class="small mx-4">
-                      <span class="dot bg-danger small"></span><br> Referral
-                    </div>
-                  </div> -->
+  
 
                 </div>
                 <div class="card shadow-sm p-3 h-14rem mt-3">
@@ -293,7 +287,7 @@
               <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12">
                 <div class="card shadow-sm mt-3 mb-3 p-3">
                   <h6 class="m-3">Top Paying Clients</h6>
-                  <p-table [value]="employees" [rows]="5" [responsiveLayout]="'scroll'" class="p-0 bg-white">
+                  <p-table [value]="employees" [rows]="5" [responsiveLayout]="'scroll'" class="p-0 bg-white table-responsive">
                     <ng-template pTemplate="header">
                       <tr class=" text-secondary no-bg-row">
                         <th class="text-secondary no-bg-row">ID</th>
@@ -327,7 +321,7 @@
             </div>
             <div class="row mt-3">
               <div class=" col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                <div class="card shadow-sm mb-4">
+                <div class="card shadow-sm mb-4 mt-2">
                   <div>
                     <img src="../../../assets/headphone.jpg" alt="" class="images-1 w-100">
                     <!-- <div class="basket-icon-container small p-2">
@@ -349,7 +343,7 @@
               </div>
               <!-- card-2 -->
               <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm mt-2">
                   <div class="">
                     <img src="../../../assets/laptop.jpg" alt="" class="images-2 w-100">
                     <p class="fw-medium m-3 mb-2 fs-6">MacBook Air Pro</p>
@@ -367,7 +361,7 @@
               </div>
               <!-- card -->
               <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm mt-2">
                   <div>
                     <img src="../../../assets/s7.jpg" alt="" class="images-2 w-100">
                     <p class="fw-medium m-3 mb-2 fs-6">Red Valvet Dress</p>
@@ -385,7 +379,7 @@
               </div>
               <!-- card-4 -->
               <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm mt-2">
                   <div>
                     <img src="../../../assets/s11.jpg" alt="" class="images-2 w-100">
                     <p class="fw-medium m-3 mb-2 fs-6">Cute Soft Teddybear</p>

@@ -381,13 +381,39 @@ export class AdminComponent {
     }
 
 
-    @HostListener('window:resize', [])
-    onResize() {
-      // Automatically show the sidebar for large screens
-      if (window.innerWidth >= 992) {
-        this.isSidebarOpen = true;
+    // @HostListener('window:resize', [])
+    // onResize() {
+    //   // Automatically show the sidebar for large screens
+    //   if (window.innerWidth >= 992) {
+    //     this.isSidebarOpen = true;
+    //   } else {
+    //     this.isSidebarOpen = false;
+    //   }
+    // }
+
+    isSidebarVisible = true;
+    screenWidth:any="";
+  
+    ngOnInit(): void {
+      this.screenWidth = window.innerWidth;
+      this.updateSidebarVisibility();
+    }
+  
+    @HostListener('window:resize', ['$event'])
+    onResize(event: any): void {
+      this.screenWidth = event.target.innerWidth;
+      this.updateSidebarVisibility();
+    }
+  
+    // toggleSidebar(): void {
+    //   this.isSidebarVisible = !this.isSidebarVisible;
+    // }
+  
+    updateSidebarVisibility(): void {
+      if (this.screenWidth < 1300) {
+        this.isSidebarVisible = false;
       } else {
-        this.isSidebarOpen = false;
+        this.isSidebarVisible = true;
       }
     }
 }
